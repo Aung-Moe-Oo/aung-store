@@ -31,7 +31,7 @@ export default function Login() {
     try {
       setUser(user);
       const res = await axios.post(
-        "http://localhost:8000/api/user/login",
+        `${import.meta.env.VITE_URL}/api/user/login`,
         user,
         {
           headers: {
