@@ -8,14 +8,7 @@ import { IconTrashFilled } from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import Notfound from "../assets/NotFound.png";
 import { useAppDispatch, useAppSelector } from "../redux/store";
-import {
-  Button,
-  Container,
-  Group,
-  Image,
-  createStyles,
-  rem,
-} from "@mantine/core";
+import { Button, Container, Image, createStyles, rem } from "@mantine/core";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -30,14 +23,14 @@ const useStyles = createStyles((theme) => ({
   group1: {
     flex: 3,
     height: "80vh",
-    width: "100%",
+    width: "75%",
     paddingRight: rem(16),
     borderRight: `1px solid ${theme.colors.gray[1]}`,
     overflowY: "scroll",
   },
   group2: {
     flex: 1,
-    width: "100%",
+    width: "25%",
     height: "100%",
     display: "flex",
     flexDirection: "column",
@@ -126,7 +119,7 @@ const Cart = () => {
       <Link to={`/`} className={classes.title}>
         <h3>Continue Shopping</h3>
       </Link>
-      <Group position="apart" className={classes.container}>
+      <div className={classes.container}>
         <div className={classes.group1}>
           <h3>Shopping Cart</h3>
 
@@ -178,7 +171,7 @@ const Cart = () => {
           </div>
           <Button>Order Now</Button>
         </div>
-      </Group>
+      </div>
       <Footer />
     </Container>
   );
