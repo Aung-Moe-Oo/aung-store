@@ -13,7 +13,7 @@ import {
 } from "@mantine/core";
 import axios from "axios";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import showNoti from "../util/showNoti";
 
 export default function Login() {
