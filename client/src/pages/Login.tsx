@@ -13,10 +13,11 @@ import {
 } from "@mantine/core";
 import axios from "axios";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 import showNoti from "../util/showNoti";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -43,7 +44,8 @@ export default function Login() {
         showNoti("Login Success!", "success");
         localStorage.setItem("token", res.data.body.token);
         localStorage.setItem("user_mail", user.email);
-        window.location.reload();
+        // window.location.reload();
+        navigate("/");
       } else {
         showNoti(res.data.meta.message, "error");
       }
