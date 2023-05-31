@@ -1,22 +1,15 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import { useEffect, useState } from "react";
 import Home from "../pages/Home";
 
 const Guest = () => {
-  const [user, setUser] = useState(false);
-  useEffect(() => {
-    const valid = () => {
-      setUser(localStorage.getItem("token") ? true : false);
-    };
-    valid();
-  }, []);
+  const isUserLoggedIn = !!localStorage.getItem("token");
 
   return useRoutes([
     {
       path: "/",
-      element: user ? <Home /> : <Navigate to="login" replace />,
+      element: isUserLoggedIn ? <Home /> : <Navigate to="login" replace />,
     },
     {
       path: "/login",

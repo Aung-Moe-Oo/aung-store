@@ -2,7 +2,8 @@ import User from "./User";
 import Guest from "./Guest";
 
 const Routes = () => {
-  return localStorage.getItem("token") ? <User /> : <Guest />;
+  const isUserLoggedIn = !!localStorage.getItem("token");
+  return isUserLoggedIn ? <User /> : <Guest />;
 };
 
 export default Routes;
