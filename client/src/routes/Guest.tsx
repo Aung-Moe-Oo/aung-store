@@ -2,7 +2,7 @@ import { Navigate, useRoutes } from "react-router-dom";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { useEffect, useState } from "react";
-import User from "./User";
+import Home from "../pages/Home";
 
 const Guest = () => {
   const [user, setUser] = useState(false);
@@ -16,7 +16,7 @@ const Guest = () => {
   return useRoutes([
     {
       path: "/",
-      element: user ? <User /> : <Navigate to="login" replace />,
+      element: user ? <Home /> : <Navigate to="login" replace />,
     },
     {
       path: "/login",
