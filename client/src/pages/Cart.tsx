@@ -30,12 +30,14 @@ const useStyles = createStyles((theme) => ({
   group1: {
     flex: 3,
     height: "80vh",
+    width: "100%",
     paddingRight: rem(16),
     borderRight: `1px solid ${theme.colors.gray[1]}`,
     overflowY: "scroll",
   },
   group2: {
     flex: 1,
+    width: "100%",
     height: "100%",
     display: "flex",
     flexDirection: "column",

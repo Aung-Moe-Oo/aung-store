@@ -44,7 +44,6 @@ export default function Login() {
         showNoti("Login Success!", "success");
         localStorage.setItem("token", res.data.body.token);
         localStorage.setItem("user_mail", user.email);
-        window.location.reload();
         navigate("/");
       } else {
         showNoti(res.data.meta.message, "error");
