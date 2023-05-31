@@ -16,7 +16,7 @@ const User = () => {
         { path: "/cart", element: <Cart /> },
       ],
     },
-    { path: "*", element: <Navigate to={"/"} /> },
+    { path: "*", element: <Navigate to="/" replace /> },
   ]);
 };
 
